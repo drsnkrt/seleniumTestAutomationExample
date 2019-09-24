@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{bootstrap.css}"/>
+</head>
+<body>
+<div class="maincontainer">
+    <div class="kare">
+        <div class="divkare">
+            <div align="left" style="padding-top: 10%">
+
+                <ul>
+                    <span th:text="'Modem Model: HG552E'"></span>
+                    <img th:disabled="false" width="20px" height="20px"
+                         th:src="@{/resources/images/ok.png}"/>
+                </ul>
+            </div>
+
+            <div align="left" style="padding-top: 15%" th:if="${sessionID!=null}">
+                <ul>
+                    <span th:text="'Modem Login Başarılı: '"></span>
+                    <img th:disabled="false" width="20px" height="20px"
+                         th:src="@{/resources/images/ok.png}"/>
+                </ul>
+            </div>
+            <div align="left" style="padding-top: 15%" th:if="${sessionID==null}">
+                <ul>
+                    <span th:text="'Modem Login Başarısız '"></span>
+                    <a href="/post"><img width="20px" height="20px"
+                                         th:src="@{/resources/images/cancel.png}"/></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
